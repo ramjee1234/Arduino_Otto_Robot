@@ -1,0 +1,20 @@
+#include <Otto.h>
+
+Otto Otto;  // Create Otto object
+
+// Define pin numbers
+#define PIN_YL 2 // Left leg
+#define PIN_YR 3 // Right leg
+#define PIN_RL 4 // Left foot
+#define PIN_RR 5 // Right foot
+
+void setup() {
+  Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true); // Initialize with default parameters
+  Otto.home();  // Go to rest position
+  delay(1000);
+}
+
+void loop() {
+  Otto.walk(1, 1000, FORWARD); // 1 step, 1 second duration, forward
+  delay(1000);
+}
